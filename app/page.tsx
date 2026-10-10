@@ -1,13 +1,13 @@
-import getProducts from "@/lib/getProducts";
-import NewArrivals from "@/src/components/global/NewArrivals/newArrivals";
+import ProductList from "@/src/components/home/product-list/productList";
 import Head from "@/src/components/home/header";
+import { getProducts, getProducts2 } from "@/lib/getProducts";
 
 export default async function Home() {
   return (
     <>
       <Head />
-      <NewArrivals title="New Arrivals" />
-      <NewArrivals title="Top Selling" />
+      <ProductList title="New Arrivals" fetchApi={getProducts} />
+      <ProductList title="Top Selling" fetchApi={getProducts2}/>
     </>
   );
 }

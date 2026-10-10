@@ -1,15 +1,15 @@
-export interface tsProduct {
-  _id: number;
-  title: string;
-  isNew: boolean;
-  oldPrice: string;
-  price: number;
-  image: string;
+import { ProductApi } from "@/src/components/types/product";
+
+export async function getProducts(): Promise<ProductApi> {
+  const data = await fetch("https://dummyjson.com/products?limit=4", {
+    next: { revalidate: 15 },
+  });
+  return data.json();
 }
 
-export default async function getProducts() {
-  const response = await fetch("https://fakestoreapi.noksha.dev/api/products",{next:{revalidate:15}});
-  const result = await response.json();
-  const product: tsProduct[] = result.data;
-  return product;  
+export async function getProducts2(): Promise<ProductApi> {
+  const data = await fetch("https://dummyjson.com/products?limit=4&skip=190", {
+    next: { revalidate: 15 },
+  });
+  return data.json();
 }

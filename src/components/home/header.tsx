@@ -1,6 +1,6 @@
 import Image from "next/image";
 import poster from "../../../public/images/poster.jpg";
-import NewArrivals from "@/src/components/global/NewArrivals/newArrivals";
+import NewArrivals from "@/src/components/home/product-list/productList";
 import Btn from "../button";
 
 const status = [
@@ -35,7 +35,7 @@ export default function Head() {
               Show Now
             </Btn>
             <div className="flex gap-12 mt-10 divide-x divide-fuchsia-950">
-              {status.map(({number,label}, i) => (
+              {status.map(({ number, label }, i) => (
                 <div key={i} className="flex flex-col items-start pr-6">
                   <span className="text-4xl font-bold">{number}</span>
                   <span className="text-base opacity-80 font-light mt-1">

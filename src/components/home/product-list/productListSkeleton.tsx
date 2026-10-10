@@ -2,7 +2,7 @@ import { Skeleton } from "@heroui/react";
 const bone =
   "animate-shine rounded-lg bg-neutral-200/90 dark:bg-neutral-800/90";
 
-export default function NewArrivalsSkeleton() {
+export default function ProductListSkeleton() {
   return (
     <div className="flex items-center justify-center gap-x-5 h-100 my-10">
       {[1, 2, 3, 4, 5].map((item) => (
