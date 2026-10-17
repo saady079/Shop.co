@@ -1,6 +1,5 @@
 import Image from "next/image";
 import poster from "../../../public/images/poster.jpg";
-import NewArrivals from "@/src/components/home/product-list/productList";
 import Btn from "../button";
 
 const status = [
@@ -23,7 +22,7 @@ export default function Head() {
       <section className="flex px-10 bg-[#F3F0F1] h-150">
         <div className="flex flex-col justify-center items-center w-1/2">
           <div className="w-lg">
-            <span className="text-6xl font-integ font-black">
+            <span className="text-6xl font-integ w-[60%] font-[1000]">
               FIND CLOTHES THAT MATCHES YOUR STYLE
             </span>
             <p className="text-justify opacity-75 my-3">

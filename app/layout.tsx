@@ -6,14 +6,14 @@ import StaticLayout from "@/src/components/global/staticLayout";
 const satoshi = localFont({
   src: "../src/fonts/Satoshi.woff2",
   variable: "--font-satoshi",
-  weight: "300 900",
+  weight: "300 800",
   display: "swap",
 });
 
 const integralCF = localFont({
   src: "../src/fonts/IntegralCF-Regular.woff2",
   variable: "--font-integralCF",
-  weight: "950",
+  weight: "900 1200",
   display: "swap",
 });
 
@@ -26,7 +26,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${satoshi.variable} ${integralCF.variable} box-border`}
+      className={`${integralCF.variable} ${satoshi.variable} box-border`}
     >
       <head>
         <link

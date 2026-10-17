@@ -6,7 +6,7 @@ export default function NewsLetter() {
     <>
       <div className="-mb-25 mx-auto w-5/6">
         <div className="bg-black rounded-3xl px-10 py-12 flex flex-col md:flex-row items-center justify-between gap-6">
-          <p className="text-white text-3xl md:text-4xl font-extrabold uppercase max-w-md ">
+          <p className="text-white font-integ text-3xl md:text-4xl uppercase max-w-lg ">
             Stay upto date about our latest offers
           </p>
 
@@ -23,7 +23,7 @@ export default function NewsLetter() {
             <input
               type="email"
               placeholder="Enter your email address"
-              className="bg-white rounded-full pl-12  py-3 outline-none w-full md:w-80"
+              className="bg-white rounded-full pl-12 py-3 outline-none w-full md:w-80"
             />
             <Btn className="w-full md:w-80">
               Subscribe to Newsletter
