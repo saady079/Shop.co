@@ -32,8 +32,7 @@ export default function CommentList({ comments }: {comments:userComment[]}) {
   );
 
   return (
-    <section className="py-16 m-auto w-[85%]">
-      {/* هدر: Title سمت چپ، فلش‌ها سمت راست */}
+    <section className="py-16 m-auto w-[85%]">      
       <div className="flex items-center justify-between">
         <h1 className="font-integ text-2xl md:text-3xl font-extrabold">Our Happy Customers</h1>
 
@@ -46,8 +45,7 @@ export default function CommentList({ comments }: {comments:userComment[]}) {
           </button>
         </div>
       </div>
-
-      {/* گرید کارت‌ها */}
+      
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
         {visibleComments.map((comment) => (
           <CommentCards key={comment.id} userComment={comment} />
