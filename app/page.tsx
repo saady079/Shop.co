@@ -2,7 +2,7 @@ import ProductList from "@/src/components/home/product-list/productList";
 import Head from "@/src/components/home/header";
 import { getProducts, getProducts2 } from "@/lib/getProducts";
 import DressStyle from "@/src/components/home/dress-style";
-import CommentMD from "@/src/components/home/commentMD";
+import CommentMD from "@/src/components/home/happy-customers/commentMD";
 
 export default async function Home() {
   return (

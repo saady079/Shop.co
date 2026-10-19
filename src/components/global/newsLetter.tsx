@@ -1,4 +1,4 @@
-import Btn from "../button";
+import Btn from "../constant/button";
 import Image from "next/image";
 
 export default function NewsLetter() {
@@ -25,9 +25,7 @@ export default function NewsLetter() {
               placeholder="Enter your email address"
               className="bg-white rounded-full pl-12 py-3 outline-none w-full md:w-80"
             />
-            <Btn className="w-full md:w-80">
-              Subscribe to Newsletter
-            </Btn>
+            <Btn className="w-full md:w-80">Subscribe to Newsletter</Btn>
           </div>
         </div>
       </div>

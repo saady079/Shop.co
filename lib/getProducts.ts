@@ -8,7 +8,7 @@ export async function getProducts(): Promise<ProductApi> {
 }
 
 export async function getProducts2(): Promise<ProductApi> {
-  const data = await fetch("https://dummyjson.com/products?limit=4&skip=78", {
+  const data = await fetch("https://dummyjson.com/products?limit=4&skip=184", {
     next: { revalidate: 15 },
   });
   return data.json();

@@ -1,5 +1,5 @@
 import React from "react";
-import Menu from "./menu";
+import Navbar from "./navbar";
 import NewsLetter from "./newsLetter";
 import Footer from "./footer";
 
@@ -7,7 +7,7 @@ import Footer from "./footer";
 export default function StaticLayout({ children }: {children:React.ReactNode}) {
   return (
     <div>
-      <Menu />
+      <Navbar />
       {children}
       <NewsLetter/>
       <Footer/>
