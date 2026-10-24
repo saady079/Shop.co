@@ -20,16 +20,14 @@ export default async function ProductList({
 
   return (
     <Suspense fallback={<ProductListSkeleton />}>
-      <section className={`mx-auto w-auto md:w-[90%] py-12 ${cssTail}`}>
-        <h1 className="font-[950] font-integ text-3xl md:text-4xl text-center">
-          {title}
-        </h1>
-        <div className="m-auto md:w-250 grid grid-cols-2 md:grid-cols-4 gap-4 mt-14">
-          {data.products.map((product) => {
-            return <ProductListCard key={product.id} pro={product} />;
-          })}
+      <section className={`mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-12 ${cssTail}`}>
+        <h1 className="text-center font-[950] font-integ sm:text-3xl md:text-4xl">{title}</h1>
+        <div className="mx-auto mt-14 grid w-xl lg:w-250 grid-cols-2 lg:grid-cols-4 gap-3 sm:mt-10">
+          {data.products.map((product) => (
+            <ProductListCard key={product.id} pro={product} />
+          ))}
         </div>
-        <div className="flex justify-center mt-13">
+        <div className="mt-8 flex justify-center sm:mt-10 lg:mt-12">
           <Btn variant="light">View All</Btn>
         </div>
       </section>

@@ -4,9 +4,10 @@ export interface Product {
   description: string;
   price: number;
   discountPercentage: number;
-  image: string[];
+  images: string[];
   thumbnail: string;
   rating: number;
+  reviews: Review[];
 }
 
 export interface ProductApi {
@@ -14,4 +15,12 @@ export interface ProductApi {
   total: number;
   skip: number;
   limit: number;
+}
+
+export interface Review {
+  rating: number;
+  comment: string;
+  date: string;
+  reviewerName: string;
+  reviewerEmail: string;
 }

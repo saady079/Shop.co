@@ -1,8 +1,13 @@
 import { getComments } from "@/lib/getComments";
 import CommentList from "./commentList";
+import Container from "../../constant/container";
 
 export default async function CommentMD() {
   const data = await getComments();
 
-  return <CommentList comments={data.comments} />;
+  return (
+    <Container>
+      <CommentList comments={data.comments} />
+    </Container>
+  );
 }

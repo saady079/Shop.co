@@ -10,19 +10,19 @@ export default function ProductListCard({ pro }: { pro: Product }) {
   return (
     <div
       key={pro.id}
-      className="boxUI relative flex flex-col shadow-md cursor-pointer w-50 md:w-auto"
+      className="boxUI relative flex flex-col shadow-md cursor-pointer w-65 md:w-auto"
     >
       <div className="w-full h-3/4 aspect-square overflow-hidden">
-        <Link href={"/"}>
+        <Link href={`/shop/${pro.id}`}>
           <Image
             src={pro.thumbnail}
             alt={pro.title}
             fill
-            className="object-contain object-top"
+            className="object-contain object-top hover:scale-104 transition-transform duration-200"
           />
         </Link>
       </div>
-      <div className="boxUI belowCard block w-full h-1/3 px-3 pt-2 bg-[#979696]/15 overflow-hidden">
+      <div className="boxUI belowCard block w-full h-1/3 px-3 pt-2 bg-[#979696]/15">
         <h2 className="font-semibold text-sm tracking-tight">{pro.title}</h2>
         <div className="flex items-center gap-1 mt-1">
           <span className="text-yellow-500">★</span>

@@ -19,51 +19,29 @@ const brands = [
 export default function Head() {
   return (
     <>
-      <section className="flex flex-col md:flex-row items-center
-        px-4 sm:px-6 lg:px-10
-        bg-[#F3F0F1]">
-
+      <section className="flex flex-col md:flex-row items-center px-4 lg:px-10 bg-[#F3F0F1]">
         {/* Text content */}
-        <div className="flex w-full md:w-1/2
-          justify-center items-center
-          py-10 sm:py-12 md:py-8">
-
+        <div className="flex w-full md:w-1/2 justify-center items-center">
           <div className="w-full max-w-lg">
-            <h1 className="font-integ font-black
-              text-4xl sm:text-5xl lg:text-6xl
-              leading-tight">
+            <h1 className="font-integ font-black text-4xl sm:text-5xl lg:text-6xl leading-tight">
               FIND CLOTHES THAT MATCHES YOUR STYLE
             </h1>
-
-            <p className="text-sm sm:text-base
-              text-justify opacity-75 my-4">
-              Browse through our diverse range of meticulously crafted
-              garments, designed to bring out your individuality and
-              cater to your sense of style.
+            <p className="text-sm sm:text-base text-justify opacity-75 my-4">
+              Browse through our diverse range of meticulously crafted garments,
+              designed to bring out your individuality and cater to your sense
+              of style.
             </p>
-
             <Btn variant="dark" className="active:bg-zinc-900">
               Show Now
             </Btn>
-
-            {/* Statistics */}
-            <div className="grid grid-cols-2 sm:grid-cols-3
-              gap-4 sm:gap-3 mt-8 sm:mt-10">
-
+            {/* StatItem */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 sm:divide-x sm:divide-[#661066] last:divide-x-0 gap-4 sm:gap-3 mt-8">
               {status.map(({ number, label }) => (
-                <div
-                  key={label}
-                  className="flex flex-col items-start
-                    sm:border-r sm:border-fuchsia-950
-                    sm:pr-3 last:border-r-0"
-                >
-                  <span className="text-2xl sm:text-3xl lg:text-4xl
-                    font-bold whitespace-nowrap">
+                <div key={label} className="flex flex-col items-start sm:pr-3">
+                  <span className="text-2xl sm:text-2xl lg:text-3xl font-bold">
                     {number}
                   </span>
-
-                  <span className="text-xs sm:text-sm
-                    lg:text-base opacity-80 font-light mt-1">
+                  <span className="text-xs lg:text-base opacity-80 font-light mt-1">
                     {label}
                   </span>
                 </div>
@@ -73,9 +51,7 @@ export default function Head() {
         </div>
 
         {/* Poster */}
-        <div className="flex justify-center items-end
-          w-full md:w-1/2 px-2 sm:px-4">
-
+        <div className="flex justify-center items-end w-full md:w-1/2 px-2 sm:px-4">
           <Image
             src={poster}
             alt="Fashion collection poster"
@@ -83,27 +59,15 @@ export default function Head() {
             height={500}
             sizes="(max-width: 767px) 100vw,
               (max-width: 1023px) 50vw, 450px"
-            className="w-full max-w-[450px] h-auto object-cover"            
+            className="w-full max-w-112.5 h-auto object-cover"
           />
         </div>
       </section>
 
       {/* Brand logos */}
-      <div className="flex flex-wrap justify-center
-        items-center gap-x-8 gap-y-6
-        sm:gap-x-10 lg:gap-x-14
-        w-full bg-black px-4 py-8 sm:py-10">
-
+      <div className="flex flex-wrap justify-center items-center gap-7 sm:gap-x-10 lg:gap-x-14 bg-black px-4 py-8">
         {brands.map(({ src, width, height }, i) => (
-          <Image
-            key={src}
-            alt={`Brand ${i + 1}`}
-            src={src}
-            width={width}
-            height={height}
-            sizes={`${width}px`}
-            className="h-auto max-w-full object-contain"
-          />
+          <Image key={i} alt="Brand" src={src} width={width} height={height} />
         ))}
       </div>
     </>

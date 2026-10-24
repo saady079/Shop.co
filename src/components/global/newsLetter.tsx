@@ -1,10 +1,11 @@
 import Btn from "../constant/button";
 import Image from "next/image";
+import Container from "../constant/container";
 
 export default function NewsLetter() {
   return (
-    <>
-      <div className="-mb-25 mx-auto w-5/6">
+    <Container>
+      <div className="-mb-25">
         <div className="bg-black rounded-3xl px-10 py-12 flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="text-white font-integ text-3xl md:text-4xl uppercase max-w-lg ">
             Stay upto date about our latest offers
@@ -29,6 +30,6 @@ export default function NewsLetter() {
           </div>
         </div>
       </div>
-    </>
+    </Container>
   );
 }

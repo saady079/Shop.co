@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import Container from "../constant/container";
 
 const logo = [
   { img: "/images/logo-twitter 2.png" },
@@ -47,7 +48,7 @@ const footerCol = [
 export default function Footer() {
   return (
     <footer className="bg-[#0000001A] border-t border-black/10 pt-35 pb-8">
-      <div className="w-5/6 mx-auto">
+      <Container>
         <div className="grid grid-cols-2 md:grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-8 ">
           <div className="col-span-2 md:col-span-1">
             <Image
@@ -109,7 +110,7 @@ export default function Footer() {
             ))}
           </div>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 }

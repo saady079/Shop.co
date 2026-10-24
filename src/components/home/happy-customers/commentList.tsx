@@ -28,7 +28,7 @@ export default function CommentList({ comments }: { comments: userComment[] }) {
   }
 
   return (
-    <section className="py-16 m-auto w-[84%] overflow-hidden">
+    <section className="py-16 overflow-hidden">
       <div className="flex items-center justify-between mb-12">
         <h1 className="font-integ text-2xl md:text-3xl font-extrabold">
           Our Happy Customers
