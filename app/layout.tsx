@@ -37,7 +37,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           referrerPolicy="no-referrer"
         />
       </head>
-      <body className="font-sato">
+      <body className="font-sato overflow-x-auto">
         <StaticLayout>{children}</StaticLayout>
       </body>
     </html>

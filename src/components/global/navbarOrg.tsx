@@ -16,15 +16,9 @@ export default function NavbarOrg() {
   const proLink = links[0].label.includes("Shop");
   const activePath = usePathname();
   return (
-    <Container>
-      <nav className="flex items-center justify-between py-3 bg-white/90 border-b-[1] border-[#0000001A]">
+      <nav className="flex items-center justify-between bg-white/80 backdrop-blur supports-backdrop-filter:bg-white/60 shadow-sm border border-gray-100 rounded-xl lg:rounded-2xl py-3 px-3 sm:px-4">
         <Link href="/" className="mr-10">
-          <Image
-            src="/images/SHOP.CO.png"
-            alt="Logo"
-            width={120}
-            height={20}
-          />
+          <Image src="/images/SHOP.CO.png" alt="Logo" width={120} height={20} />
         </Link>
         <div className="flex text-sm font-bold opacity-75">
           {links.map(({ href, label }, i) => {
@@ -61,6 +55,5 @@ export default function NavbarOrg() {
           <i className="far fa-user-circle"></i>
         </div>
       </nav>
-    </Container>
   );
 }

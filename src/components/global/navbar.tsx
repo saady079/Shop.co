@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import close from "../../../public/images/close.png";
-import { MouseEventHandler, useState } from "react";
+import React, { MouseEventHandler, useState } from "react";
 import NavbarOrg from "./navbarOrg";
 import Container from "../constant/container";
 
@@ -14,9 +14,9 @@ export default function Navbar() {
   };
 
   return (
-    <div className="z-50 sticky top-0">
+    <React.Fragment>
       {isVisible ? (
-        <>
+        <div className="z-40 fixed top-0 w-full">
           <div className="bg-black">
             <Container>
               <div className="relative flex justify-center items-center py-2 text-[14px]">
@@ -43,10 +43,14 @@ export default function Navbar() {
             </Container>
           </div>
           <NavbarOrg />
-        </>
+        </div>
       ) : (
-        <NavbarOrg />
+        <div className="z-40 fixed top-0.5 w-full">
+          <Container>
+            <NavbarOrg />
+          </Container>
+        </div>
       )}
-    </div>
+    </React.Fragment>
   );
 }

@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Button from "../constant/button";
 
-function AddToCart() {
+export default function AddToCart() {
   const [quantity, setQuantity] = useState(1);
 
   const increase = () => setQuantity((prev) => prev + 1);
@@ -27,5 +27,3 @@ function AddToCart() {
     </div>
   );
 }
-
-export default AddToCart;

@@ -21,8 +21,8 @@ export default async function ProductList({
   return (
     <Suspense fallback={<ProductListSkeleton />}>
       <section className={`mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-12 ${cssTail}`}>
-        <h1 className="text-center font-[950] font-integ sm:text-3xl md:text-4xl">{title}</h1>
-        <div className="mx-auto mt-14 grid w-xl lg:w-250 grid-cols-2 lg:grid-cols-4 gap-3 sm:mt-10">
+        <h1 className="text-balance text-center mb-8 font-integ text-2xl font-[950] sm:text-3xl md:text-4xl">{title}</h1>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4  lg:gap-6">
           {data.products.map((product) => (
             <ProductListCard key={product.id} pro={product} />
           ))}

@@ -16,7 +16,7 @@ async function ProductPage({ params }: ProductPageProps) {
   const product = await getProductById(id);
 
   return (
-    <div>
+    <div className="mt-25">
       <div className="m-auto max-w-[80%]">
         <Breadcrumb
           items={[

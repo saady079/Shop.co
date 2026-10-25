@@ -19,11 +19,11 @@ const brands = [
 export default function Head() {
   return (
     <>
-      <section className="flex flex-col md:flex-row items-center px-4 lg:px-10 bg-[#F3F0F1]">
+      <section className="flex flex-col md:flex-row px-4 pt-15 lg:px-10 bg-[#F3F0F1]">
         {/* Text content */}
-        <div className="flex w-full md:w-1/2 justify-center items-center">
+        <div className="flex md:w-1/2 justify-center items-center pt-13 sm:pt-10 md:pt-0">
           <div className="w-full max-w-lg">
-            <h1 className="font-integ font-black text-4xl sm:text-5xl lg:text-6xl leading-tight">
+            <h1 className="font-integ font-black text-4xl sm:text-5xl lg:text-6xl line-clamp-3">
               FIND CLOTHES THAT MATCHES YOUR STYLE
             </h1>
             <p className="text-sm sm:text-base text-justify opacity-75 my-4">
@@ -38,10 +38,10 @@ export default function Head() {
             <div className="grid grid-cols-2 sm:grid-cols-3 sm:divide-x sm:divide-[#661066] last:divide-x-0 gap-4 sm:gap-3 mt-8">
               {status.map(({ number, label }) => (
                 <div key={label} className="flex flex-col items-start sm:pr-3">
-                  <span className="text-2xl sm:text-2xl lg:text-3xl font-bold">
+                  <span className="text-xl sm:text-xl lg:text-2xl font-bold">
                     {number}
                   </span>
-                  <span className="text-xs lg:text-base opacity-80 font-light mt-1">
+                  <span className="text-xs lg:text-sm opacity-90 font-light mt-1">
                     {label}
                   </span>
                 </div>
@@ -51,7 +51,7 @@ export default function Head() {
         </div>
 
         {/* Poster */}
-        <div className="flex justify-center items-end w-full md:w-1/2 px-2 sm:px-4">
+        <div className="flex justify-center md:w-1/2">
           <Image
             src={poster}
             alt="Fashion collection poster"

@@ -1,19 +1,13 @@
 "use client";
+import { useState } from "react";
 
-import React, { useState } from "react";
-
-type Color = {
-  name: string;
-  value: string;
-};
-
-const colors: Color[] = [
+const colors = [
   { name: "gray", value: "#6B7280" },
   { name: "teal", value: "#2C4A52" },
   { name: "blue", value: "#2B4C8C" },
 ];
 
-function ColorSelector() {
+export default function ColorSelector() {
   const [selectedColor, setSelectedColor] = useState(colors[0].name);
 
   return (
@@ -36,5 +30,3 @@ function ColorSelector() {
     </div>
   );
 }
-
-export default ColorSelector;
