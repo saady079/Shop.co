@@ -37,7 +37,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           referrerPolicy="no-referrer"
         />
       </head>
-      <body className="font-sato overflow-x-auto">
+      <body className="flex min-h-dvh flex-col font-sato">
         <StaticLayout>{children}</StaticLayout>
       </body>
     </html>

@@ -10,13 +10,11 @@ export default function StaticLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div>
-      <CartProvider>
-        <Navbar />
-        {children}
-        <NewsLetter />
-        <Footer />
-      </CartProvider>
-    </div>
+    <CartProvider>
+      <Navbar />
+      <main className="flex-1">{children}</main>
+      <NewsLetter />
+      <Footer />
+    </CartProvider>
   );
 }
