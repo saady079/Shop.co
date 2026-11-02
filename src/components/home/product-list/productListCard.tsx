@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Product } from "../../types/product";
+import { Product } from "../../../types/product";
 import Link from "next/link";
 
 export default function ProductListCard({ pro }: { pro: Product }) {
@@ -30,7 +30,9 @@ export default function ProductListCard({ pro }: { pro: Product }) {
           <span className="text-black/80">{pro.rating} | 5</span>
         </div>
         <div className="mt-auto flex flex-wrap items-baseline gap-x-2 gap-y-1">
-          <p className="text-base font-extrabold sm:text-lg mt-1">${pro.price}</p>
+          <p className="text-base font-extrabold sm:text-lg mt-1">
+            ${pro.price}
+          </p>
           <p className="text-sm font-extrabold line-through opacity-50 sm:text-base">
             ${oldPrice?.toFixed()}
           </p>

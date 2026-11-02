@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import CommentCards from "./commentCards";
-import { userComment } from "../../types/comment";
+import { userComment } from "../../../types/comment";
 
 export default function CommentList({ comments }: { comments: userComment[] }) {
   const [current, setCurrent] = useState(0);
@@ -52,7 +52,7 @@ export default function CommentList({ comments }: { comments: userComment[] }) {
         </div>
       </div>
 
-      <div className="flex justify-between md:h-40 gap-4">
+      <div className="flex justify-between md:h-45 gap-4">
         {/* Previous blurred comment */}
         <div className="w-[10%] shrink-0 overflow-hidden">
           <div className="h-full w-70 origin-left scale-100 blur-[3px] opacity-40">

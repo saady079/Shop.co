@@ -14,16 +14,16 @@ export default function Navbar() {
   };
 
   return (
-    <React.Fragment>
+    <>
       {isVisible ? (
-        <div className="z-40 fixed top-0 w-full">
+        <div className="z-50 sticky top-0 w-full">
           <div className="bg-black">
             <Container>
-              <div className="relative flex justify-center items-center py-2 text-[14px]">
+              <div className="relative flex justify-center items-center py-1.5 text-[14px]">
                 <p className="text-white text-center">
                   Sign up and get 20% off to your first order.
                   <Link
-                    href=""
+                    href="#"
                     className="underline underline-offset-4 decoration-1 ml-1"
                   >
                     Sign Up Now
@@ -45,12 +45,10 @@ export default function Navbar() {
           <NavbarOrg />
         </div>
       ) : (
-        <div className="z-40 fixed top-0.5 w-full">
-          <Container>
-            <NavbarOrg />
-          </Container>
+        <div className="z-50 sticky top-0.5 w-full">
+          <NavbarOrg />
         </div>
       )}
-    </React.Fragment>
+    </>
   );
 }

@@ -1,56 +1,58 @@
 import { getProductById } from "@/lib/getProductById";
+import { getProductsByCategory } from "@/lib/getCategory";
+import { getProducts } from "@/lib/getProducts";
+import { notFound } from "next/navigation";
 import Breadcrumb from "@/src/components/buy/Breadcrumb";
 import ProductGallery from "@/src/components/buy/ProductGallery";
 import ProductInfo from "@/src/components/buy/ProductInfo";
-import ColorSelector from "@/src/components/buy/ColorSelector";
-import SizeSelector from "@/src/components/buy/SizeSelector";
 import ReviewsList from "@/src/components/buy/ReviewsList";
-import AddToCart from "@/src/components/buy/AddToCart";
 import ProductList from "@/src/components/home/product-list/productList";
-import { getProductsByCategory } from "@/lib/getCategory";
-import { getProducts } from "@/lib/getProducts";
+import Container from "@/src/components/constant/container";
+import ProductActions from "@/src/components/cart/ProductActions";
 
 type ProductPageProps = {
   params: Promise<{ id: string }>;
 };
 
-async function ProductPage({ params }: ProductPageProps) {
+export default async function ProductPage({ params }: ProductPageProps) {
   const { id } = await params;
   const product = await getProductById(id);
 
-  return (
-    <div className="mt-25">
-      <div className="m-auto max-w-[80%]">
-        <Breadcrumb
-          items={[
-            { label: "Home", href: "/" },
-            { label: "Shop", href: "/shop" },
-            { label: "Men", href: "/shop/men" },
-            { label: "T-shirts" },
-          ]}
-        />
+  if (!product) notFound();
 
-        <div className="flex flex-col md:flex-row gap-10 mt-4">
-          <div className="w-full md:w-1/2">
-            <ProductGallery pro={product} />
+  return (
+    <>
+      <Container>
+        <div className="py-4 lg:py-6">
+          <Breadcrumb
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Shop", href: "/shop" },
+              {
+                label: product.category.replace(/-/g, " "),
+                href: `/shop/category/${product.category}`,
+              },
+              { label: product.title },
+            ]}
+          />
+
+          <div className="mt-4 flex flex-col gap-6 lg:mt-6 lg:flex-row lg:gap-10">
+            <div className="w-full min-w-0 lg:w-1/2">
+              <ProductGallery images={product.images} />
+            </div>
+
+            <div className="min-w-0 flex-1">
+              <ProductInfo product={product} />
+              <ProductActions product={product} />
+            </div>
           </div>
 
-          <div className="flex-1">
-            <ProductInfo pro={product} />
-
-            <div className="mt-6">
-              <ColorSelector />
-            </div>
-            <div className="mt-6 border-b border-black/10 pb-6">
-              <SizeSelector />
-            </div>
-
-            <AddToCart />
+          <div className="mt-10 lg:mt-16">
+            <ReviewsList reviews={product.reviews} />
           </div>
         </div>
-        <ReviewsList reviews={product.reviews} />
-      </div>
-      
+      </Container>
+
       <ProductList
         title="YOU MIGHT ALSO LIKE"
         showViewAll={false}
@@ -67,8 +69,6 @@ async function ProductPage({ params }: ProductPageProps) {
             : getProducts();
         }}
       />
-    </div>
+    </>
   );
 }
-
-export default ProductPage;

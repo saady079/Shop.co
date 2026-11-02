@@ -1,4 +1,4 @@
-import { userComment } from "../../types/comment";
+import { userComment } from "../../../types/comment";
 
 export default function CommentCards({
   userComment,

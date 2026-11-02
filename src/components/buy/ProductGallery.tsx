@@ -1,32 +1,67 @@
 "use client";
+
 import { useState } from "react";
 import Image from "next/image";
-import { Product } from "../types/product";
 
+type ProductGalleryProps = {
+  images: string[];
+};
 
-export default function ProductGallery({ pro }: {pro:Product}) {
-  const [selectedImage, setSelectedImage] = useState(pro.images[0]);
+export default function ProductGallery({ images }: ProductGalleryProps) {
+  const [broken, setBroken] = useState<string[]>([]);
+  const [selected, setSelected] = useState(0);
+
+  const validImages = (images ?? []).filter((img) => !broken.includes(img));
+
+  const markBroken = (img: string) =>
+    setBroken((prev) => (prev.includes(img) ? prev : [...prev, img]));
+
+  if (!validImages.length) return null;
+
+  const activeIndex = Math.min(selected, validImages.length - 1);
+  const current = validImages[activeIndex];
+  const thumbs = validImages.slice(0, 4);
 
   return (
-    <div className="flex gap-4">
-      {/* تامبنیل‌های کوچیک */}
-      <div className="flex flex-col gap-3">
-        {pro.images.map((img, index) => (
-          <button
-            key={index}
-            onClick={() => setSelectedImage(img)}
-            className={`relative size-17 rounded-xl overflow-hidden bg-[#F0EEED] border-2 ${
-              selectedImage === img ? "border-black" : "border-transparent"
-            }`}
-          >
-            <Image src={img} alt={`thumbnail-${index}`} className="object-cover " width={152} height={167} />
-          </button>
-        ))}
+    <div className="flex w-full min-w-0 flex-col gap-3 lg:flex-row-reverse lg:gap-4">
+      {/* عکس بزرگ */}
+      <div className="relative aspect-square w-full min-w-0 overflow-hidden rounded-2xl bg-[#F0EEED] lg:flex-1 lg:rounded-[20px]">
+        <Image
+          key={current}
+          src={current}
+          alt="product"
+          fill
+          priority
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          unoptimized
+          onError={() => markBroken(current)}
+          className="object-contain"
+        />
       </div>
 
-      {/* عکس بزرگ */}
-      <div className="relative flex-1 aspect-square bg-[#F0EEED] rounded-2xl overflow-hidden">
-        <Image src={selectedImage} alt={pro.title} className="object-cover" width={444} height={530} />
+      {/* تامبنیل‌ها: موبایل ردیفی زیر عکس | دسکتاپ ستونی سمت چپ */}
+      <div className="grid grid-cols-4 gap-2 lg:flex lg:w-36 lg:shrink-0 lg:flex-col lg:gap-3.5">
+        {thumbs.map((img, index) => (
+          <button
+            key={img}
+            type="button"
+            onClick={() => setSelected(index)}
+            aria-label={`Show image ${index + 1}`}
+            className={`relative aspect-square w-full overflow-hidden rounded-xl border-2 bg-[#F0EEED] lg:rounded-[20px] ${
+              activeIndex === index ? "border-black" : "border-transparent"
+            }`}
+          >
+            <Image
+              src={img}
+              alt={`thumbnail-${index + 1}`}
+              fill
+              sizes="(max-width: 1024px) 25vw, 144px"
+              unoptimized
+              onError={() => markBroken(img)}
+              className="object-contain"
+            />
+          </button>
+        ))}
       </div>
     </div>
   );

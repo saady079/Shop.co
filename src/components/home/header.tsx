@@ -1,11 +1,12 @@
 import Image from "next/image";
 import poster from "../../../public/images/poster.jpg";
 import Btn from "../constant/button";
+import CountUp from "./countUp";
 
 const status = [
-  { number: "200+", label: "International Brands" },
-  { number: "2,000+", label: "High-Quality Products" },
-  { number: "30,000+", label: "Happy Customers" },
+  { end: 200, label: "International Brands" },
+  { end: 2000, label: "High-Quality Products" },
+  { end: 30000, label: "Happy Customers" },
 ];
 
 const brands = [
@@ -19,11 +20,11 @@ const brands = [
 export default function Head() {
   return (
     <>
-      <section className="flex flex-col md:flex-row px-4 pt-15 lg:px-10 bg-[#F3F0F1]">
+      <section className="flex flex-col md:flex-row px-4 lg:px-10 bg-[#F3F0F1]">
         {/* Text content */}
         <div className="flex md:w-1/2 justify-center items-center pt-13 sm:pt-10 md:pt-0">
           <div className="w-full max-w-lg">
-            <h1 className="font-integ font-black text-4xl sm:text-5xl lg:text-6xl line-clamp-3">
+            <h1 className="font-integ font-black text-4xl sm:text-[47px] lg:text-[55px] line-clamp-3">
               FIND CLOTHES THAT MATCHES YOUR STYLE
             </h1>
             <p className="text-sm sm:text-base text-justify opacity-75 my-4">
@@ -35,12 +36,13 @@ export default function Head() {
               Show Now
             </Btn>
             {/* StatItem */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 sm:divide-x sm:divide-[#661066] last:divide-x-0 gap-4 sm:gap-3 mt-8">
-              {status.map(({ number, label }) => (
+            <div className="grid grid-cols-2 sm:grid-cols-3 sm:divide-x sm:divide-[#661066] gap-4 sm:gap-3 mt-8">
+              {status.map(({ end, label }) => (
                 <div key={label} className="flex flex-col items-start sm:pr-3">
-                  <span className="text-xl sm:text-xl lg:text-2xl font-bold">
-                    {number}
-                  </span>
+                  <CountUp
+                    end={end}
+                    className="text-xl sm:text-xl lg:text-2xl font-bold"
+                  />
                   <span className="text-xs lg:text-sm opacity-90 font-light mt-1">
                     {label}
                   </span>

@@ -1,4 +1,4 @@
-import { CommentApi } from "@/src/components/types/comment";
+import { CommentApi } from "@/src/types/comment";
 import { BASE_URL } from "./variables";
 
 export async function getComments(): Promise<CommentApi> {

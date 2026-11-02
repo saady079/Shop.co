@@ -1,14 +1,14 @@
 "use client";
-
 import { useState } from "react";
-import { Review } from "../types/product";
+import Button from "../constant/button";
 import ReviewCard from "./ReviewCard";
+import { Review } from "../../types/product";
 
 type ReviewsListProps = {
   reviews: Review[];
 };
 
-function ReviewsList({ reviews }: ReviewsListProps) {
+export default function ReviewsList({ reviews }: ReviewsListProps) {
   const [visibleCount, setVisibleCount] = useState(6);
 
   const visibleReviews = reviews.slice(0, visibleCount);
@@ -31,7 +31,7 @@ function ReviewsList({ reviews }: ReviewsListProps) {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
         {visibleReviews.map((review, index) => (
           <ReviewCard key={index} review={review} />
         ))}
@@ -47,8 +47,11 @@ function ReviewsList({ reviews }: ReviewsListProps) {
           </button>
         </div>
       )}
+      <div className="flex justify-center">
+        <Button variant="light" className="mt-12">
+          Load More Reviews
+        </Button>
+      </div>
     </div>
   );
 }
-
-export default ReviewsList;

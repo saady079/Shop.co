@@ -6,7 +6,7 @@ import CommentMD from "@/src/components/home/happy-customers/commentMD";
 
 export default async function Home() {
   return (
-    <>
+    <div>
       <Head />
       <ProductList
         title="New Arrivals"
@@ -16,6 +16,6 @@ export default async function Home() {
       <ProductList title="Top Selling" fetchApi={getProducts2} />
       <DressStyle />
       <CommentMD />
-    </>
+    </div>
   );
 }
