@@ -1,7 +1,7 @@
-import Container from "@/src/components/constant/container";
+import Container from "@/src/components/ui/container";
 import CartContent from "@/src/components/cart/CartContent";
 import { Breadcrumbs } from "@heroui/react";
-import Breadcrumb from "@/src/components/buy/Breadcrumb";
+import Breadcrumb from "@/src/components/productView/Breadcrumb";
 
 function CartPage() {
   return (

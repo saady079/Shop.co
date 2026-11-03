@@ -1,13 +1,13 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import Container from "@/src/components/constant/container";
+import Container from "@/src/components/ui/container";
 import CategoryFilters from "@/src/components/category/CategoryFilters";
 import SortSelect from "@/src/components/category/SortSelect";
 import Pagination from "@/src/components/category/Pagination";
 import { getProductsByCategories } from "@/lib/getCategory";
 import ProductListCard from "@/src/components/home/product-list/productListCard";
 import { CATEGORY_MAP } from "@/src/components/constant/categories";
-import Breadcrumb from "@/src/components/buy/Breadcrumb";
+import Breadcrumb from "@/src/components/productView/Breadcrumb";
 
 const PAGE_SIZE = 2;
 

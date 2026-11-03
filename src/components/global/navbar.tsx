@@ -4,7 +4,7 @@ import Link from "next/link";
 import close from "../../../public/images/close.png";
 import React, { MouseEventHandler, useState } from "react";
 import NavbarOrg from "./navbarOrg";
-import Container from "../constant/container";
+import Container from "../ui/container";
 
 export default function Navbar() {
   const [isVisible, setIsVisible] = useState(true);

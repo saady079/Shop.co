@@ -16,8 +16,8 @@ function CartContent() {
     return (
       <div className="mt-10 text-black/60">
         Your cart is empty.{" "}
-        <Link href="/shop/category/all" className="text-black underline">
-          Continue shopping
+        <Link href="/shop/category/all" className="text-black underline underline-offset-8">
+          continue shopping
         </Link>
       </div>
     );

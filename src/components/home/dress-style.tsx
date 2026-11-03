@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import Container from "../constant/container";
+import Container from "../ui/container";
 
 const frame = [
   { type: "Casual", img: "/images/casual.png", css: "col-span-2" },

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import poster from "../../../public/images/poster.jpg";
-import Btn from "../constant/button";
-import CountUp from "./countUp";
+import Btn from "../ui/button";
+import CountUp from "../ui/countUp";
 
 const status = [
   { end: 200, label: "International Brands" },

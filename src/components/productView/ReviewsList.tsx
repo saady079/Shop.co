@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import Button from "../constant/button";
+import Button from "../ui/button";
 import ReviewCard from "./ReviewCard";
 import { Review } from "../../types/product";
 

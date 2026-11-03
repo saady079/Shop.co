@@ -1,6 +1,6 @@
-import Btn from "../constant/button";
+import Btn from "../ui/button";
 import Image from "next/image";
-import Container from "../constant/container";
+import Container from "../ui/container";
 
 export default function NewsLetter() {
   return (

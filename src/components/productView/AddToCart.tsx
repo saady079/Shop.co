@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Button from "../constant/button";
+import Button from "../ui/button";
 
 export default function AddToCart() {
   const [quantity, setQuantity] = useState(1);

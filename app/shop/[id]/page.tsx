@@ -2,12 +2,12 @@ import { getProductById } from "@/lib/getProductById";
 import { getProductsByCategory } from "@/lib/getCategory";
 import { getProducts } from "@/lib/getProducts";
 import { notFound } from "next/navigation";
-import Breadcrumb from "@/src/components/buy/Breadcrumb";
-import ProductGallery from "@/src/components/buy/ProductGallery";
-import ProductInfo from "@/src/components/buy/ProductInfo";
-import ReviewsList from "@/src/components/buy/ReviewsList";
+import Breadcrumb from "@/src/components/productView/Breadcrumb";
+import ProductGallery from "@/src/components/productView/ProductGallery";
+import ProductInfo from "@/src/components/productView/ProductInfo";
+import ReviewsList from "@/src/components/productView/ReviewsList";
 import ProductList from "@/src/components/home/product-list/productList";
-import Container from "@/src/components/constant/container";
+import Container from "@/src/components/ui/container";
 import ProductActions from "@/src/components/cart/ProductActions";
 
 type ProductPageProps = {

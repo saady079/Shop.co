@@ -1,7 +1,7 @@
 import "./productList.css";
-import ProductListSkeleton from "./productListSkeleton";
+import ProductListSkeleton from "../../ui/productListSkeleton";
 import { Suspense } from "react";
-import Btn from "../../constant/button";
+import Btn from "../../ui/button";
 import { ProductApi } from "../../../types/product";
 import ProductListCard from "./productListCard";
 

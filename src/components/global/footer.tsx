@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import Container from "../constant/container";
+import Container from "../ui/container";
 
 const logo = [
   { img: "/images/logo-twitter 2.png" },
@@ -71,7 +71,7 @@ export default function Footer() {
                     i == 1 ? "bg-black" : "bg-white"
                   }`}
                 >
-                  <Image src={img} alt="logo" width={10} height={10}/>
+                  <Image src={img} alt="logo" width={10} height={10} />
                 </span>
               ))}
             </div>
